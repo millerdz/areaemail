@@ -4,7 +4,7 @@ FOGBUGZ_TOKEN = process.env.FOGBUGZ_TOKEN
 module.exports =
 
   update: (ixbug, area) ->
-    console.log 'fogbugz::update'
+    #console.log 'fogbugz::update'
     return new Promise (resolve, reject) ->
       request
         method: 'POST'
@@ -15,16 +15,17 @@ module.exports =
           ixbug: ixbug
           ixArea: area
         (error, response, responseBody) ->
-          console.log responseBody
+          #console.log responseBody
           responseJson = JSON.parse responseBody
           if error
-            reject Error 'case update failed'
+            console.log 'case=' + ixbug, 'FogBugz Error:', responseJson
+            reject Error 'case=' + ixbug, 'case update failed.'
           else
-            console.log 'case updated', responseJson
+            console.log 'case=' + responseJson.data.case.ixBug, 'fogbugz: case updated.'
             resolve responseJson
             
   sendSuccess: (res, msg) ->
-    console.log '🌺 sendSuccess'
+    #console.log 'fogbugz: sendSuccess'
     #res.json( 'msg': msg )
     res.status 200
     res.send msg
