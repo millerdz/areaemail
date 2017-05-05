@@ -14,8 +14,10 @@
 
 ## To Test
 
-2. With curl set your 'casenumber' parameter below to an existing case number in your FogBugz account:
-curl -H "Content-Type: application/json" -X POST -d '{"eventtype":"CaseOpened","casenumber":"693", "emailfrom": "something", "emailto": "something", "emailbodyhtml": "state: massachusetts", "emailbodytext": "state: massachusetts",}' http://relieved-porch.glitch.me/update?secret=your_secret
+2. With curl, set your **casenumber**, **emailfrom**, **emailto**, **emailbodytext**, and **emailbodyhtml** parameters below to an existing case number in your FogBugz account:
+```
+curl -H "Content-Type: application/json" -X POST -d '{"eventtype":"CaseOpened","casenumber":"693", "emailfrom": "something", "emailto": "something", "emailbodyhtml": "state: massachusetts", "emailbodytext": "state: massachusetts",}' https://relieved-porch.glitch.me/update?secret=your_secret
+```
 
 ## .env file content
 
