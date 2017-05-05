@@ -39,9 +39,9 @@ FOGBUGZ_URL=https://YOUR_ACCOUNT.fogbugz.com/f/api/0/jsonapi
 #Go to Gear icon > Webhooks for more eventtypes or here: http://help.fogcreek.com/10800/webhooks
 EVENT_TYPE=CaseOpened
 # ixArea values
-UNDECIDED=<ixArea_value>
-EAST=ixArea_value>
-WEST=ixArea_value>
+UNDECIDED=ixArea_value
+EAST=ixArea_value
+WEST=ixArea_value
 # note: .env is a shell file so there can't be spaces around '=
 ```
 
