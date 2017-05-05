@@ -1,0 +1,28 @@
+{
+	"name": "hyperdev-api",
+	"version": "0.0.1",
+	"description": "FogBugz Round Robin",
+	"main": "server.coffee",
+	"scripts": {
+		"start": "./node_modules/.bin/coffee server.coffee"
+	},
+	"dependencies": {
+		"express": "^5.0.0-alpha.2",
+		"body-parser": "^1.15.2",
+		"request": "^2.75.0",
+		"coffee-script": "^1.11.1",
+		"coffee-middleware": "^0.3.0",
+		"firebase": "^3.5.0"
+	},
+	"engines": {
+		"node": "4.4.5"
+	},
+	"keywords": [
+		"node",
+		"hyperdev",
+		"express",
+		"api",
+		"fogbugz"
+	],
+	"license": "MIT"
+}
