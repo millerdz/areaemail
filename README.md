@@ -10,12 +10,12 @@
 2. In the FogBugz Webhook configuration:
 - Set the URL to https://relieved-porch.glitch.me/update?secret=your_secret
 - Set the Hook Type to: POST
-- Choose your event type as CaseAssigned then set a Filter (e.g. ProjectName = "Webhook test" AssignedToID="45") value so you don't process unrelated web hooks.
+- Choose your event type as CaseOpened then set a Filter (e.g. ProjectName = "Webhook test" and AreaID = "1") value so you don't process unrelated web hooks.
 
 ## To Test
 
 2. With curl set your 'casenumber' parameter below to an existing case number in your FogBugz account:
-curl -H "Content-Type: application/json" -X POST -d '{"eventtype":"CaseOpened","casenumber":"693", "assignedtoid":"45"}' http://relieved-porch.glitch.me/update?secret=your_secret
+curl -H "Content-Type: application/json" -X POST -d '{"eventtype":"CaseOpened","casenumber":"693", "emailfrom": "something", "emailto": "something", "emailbodyhtml": "state: massachusetts", "emailbodytext": "state: massachusetts",}' http://relieved-porch.glitch.me/update?secret=your_secret
 
 ## .env file content
 
@@ -39,9 +39,9 @@ FOGBUGZ_URL=https://YOUR_ACCOUNT.fogbugz.com/f/api/0/jsonapi
 #Go to Gear icon > Webhooks for more eventtypes or here: http://help.fogcreek.com/10800/webhooks
 EVENT_TYPE=CaseOpened
 # ixArea values
-UNDECIDED=<ixArea_value>
-EAST=ixArea_value>
-WEST=ixArea_value>
+UNDECIDED=ixArea_value
+EAST=ixArea_value
+WEST=ixArea_value
 # note: .env is a shell file so there can't be spaces around '=
 ```
 
